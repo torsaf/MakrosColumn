@@ -1,0 +1,12 @@
+Sub павр()
+Dim Kniga As String
+Dim ITK, IOK As String
+
+Kniga = ThisWorkbook.Path & "\CSV\!Сводная таблица.xlsx"
+ITK = ThisWorkbook.Name
+IOK = Dir(Kniga)
+GetObject (Kniga)
+Workbooks(ITK).Worksheets("General").Range("AE:AE") = Workbooks(IOK).Worksheets("Sheet1").Range("S:S").Value2
+Workbooks(IOK).Close (False)
+
+End Sub
